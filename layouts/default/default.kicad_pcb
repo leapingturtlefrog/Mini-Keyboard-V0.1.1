@@ -7073,9 +7073,9 @@
 		(layer "Edge.Cuts")
 		(uuid "6662af0a-6636-4466-849b-10a1787ab94a")
 	)
-	(gr_text "Alex Aridgides\nWork Inc.\nV0.1.1"
-		(at 132 79 0)
-		(layer "F.Cu")
+	(gr_text "Alex Aridgides\nWork\nV0.1.1\natopile\n{{GITHASH}}"
+		(at 132 83.5 0)
+		(layer "F.SilkS")
 		(uuid "bbca01f6-a3c6-4fd7-84cd-63fe6fe08b2e")
 		(effects
 			(font
