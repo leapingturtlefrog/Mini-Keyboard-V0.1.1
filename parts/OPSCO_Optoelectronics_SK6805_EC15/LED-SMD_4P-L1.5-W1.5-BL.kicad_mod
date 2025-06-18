@@ -1,0 +1,187 @@
+(footprint "OPSCO_Optoelectronics_SK6805_EC15:LED-SMD_4P-L1.5-W1.5-BL"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4.48 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "ace6a4f0-8a8a-4103-b893-5b44a3efec2b")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "LED-SMD_4P-L1.5-W1.5-BL"
+        (at 0 4.48 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "3cf39498-dd39-441c-ac6b-608e4fcb71bb")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "ec92f53e3bb7263e321d0bdec5366891cc87e61b1d8736153a23dba2edf4c9b9"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "cf8d0d3b-e50d-4b02-91ab-e6a67e84a4f3")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start -1.1 0.5)
+        (end -1.1 1.1)
+        (stroke
+            (width 0.13)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "88bcd003-de61-4733-ad33-f4f5ee9bfff9")
+    )
+    (fp_line
+        (start -1.1 1.1)
+        (end -0.54 1.1)
+        (stroke
+            (width 0.13)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f8609755-c052-4065-9041-409f3911bfce")
+    )
+    (fp_line
+        (start -0.9 -0.9)
+        (end 0.9 -0.9)
+        (stroke
+            (width 3)
+            (type solid)
+        )
+        (layer "F.Fab")
+        (uuid "2e257331-d8f4-407c-8790-596afd5c3efc")
+    )
+    (fp_line
+        (start 0.9 -0.9)
+        (end 0.9 0.9)
+        (stroke
+            (width 3)
+            (type solid)
+        )
+        (layer "F.Fab")
+        (uuid "46745494-27e0-4a8c-93fb-92c73dfc3c2e")
+    )
+    (fp_line
+        (start 0.9 0.9)
+        (end -0.9 0.9)
+        (stroke
+            (width 3)
+            (type solid)
+        )
+        (layer "F.Fab")
+        (uuid "0b671de7-ecad-4066-be8a-2c526ee0ff14")
+    )
+    (fp_line
+        (start -0.9 -0.9)
+        (end -0.9 -0.9)
+        (stroke
+            (width 3)
+            (type solid)
+        )
+        (layer "F.Fab")
+        (uuid "1ad8c8be-1469-4d59-9f5c-f4096e9e2adc")
+    )
+    (fp_circle
+        (center -0.75 0.75)
+        (end -0.72 0.75)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "cad63568-6da3-4aaf-b4e2-756fc018d2b5")
+    )
+    (fp_circle
+        (center -0.75 0.75)
+        (end -0.7 0.75)
+        (stroke
+            (width 0.1)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "48d61e4b-b143-45c4-b0ad-4082a8b09eea")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "f018c657-3dcc-49b6-aa4c-a866ea5be990")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4.48 0)
+        (layer "F.SilkS")
+        (uuid "ace6a4f0-8a8a-4103-b893-5b44a3efec2b")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "4" smd rect
+        (at -0.48 -0.48 0)
+        (size 0.55 0.55)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "2f96f29d-d12e-4b67-ba2c-fbc27b55b911")
+    )
+    (pad "1" smd rect
+        (at -0.48 0.47 0)
+        (size 0.55 0.55)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "e56962bc-6d20-499e-99bf-7fb6266d8c1d")
+    )
+    (pad "2" smd rect
+        (at 0.48 0.48 0)
+        (size 0.55 0.55)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "01f93bde-f1ba-4e5c-a316-9830507b3bff")
+    )
+    (pad "3" smd rect
+        (at 0.48 -0.48 0)
+        (size 0.55 0.55)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "e8c04995-bc87-4109-b7b0-08a09df1a205")
+    )
+    (model "${KIPRJMOD}/../../parts/OPSCO_Optoelectronics_SK6805_EC15/LED-SMD_4P-L1.5-W1.5-BL.STEP"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

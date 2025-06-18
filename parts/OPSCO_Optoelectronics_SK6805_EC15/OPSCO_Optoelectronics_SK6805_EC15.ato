@@ -1,0 +1,37 @@
+#pragma experiment("TRAITS")
+#pragma experiment("BRIDGE_CONNECT")
+
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+import ElectricPower
+from "bridgable_logic.py" import BridgableLogic
+
+component OPSCO_Optoelectronics_SK6805_EC15_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2890035", date="2025-06-18T20:26:16.358266+00:00", checksum="6d6273d2b61b808ca8823a94121880ed22d6643ca1e1d96d411fa00fd0833869">
+
+    trait is_atomic_part<manufacturer="OPSCO Optoelectronics", partnumber="SK6805-EC15", footprint="LED-SMD_4P-L1.5-W1.5-BL.kicad_mod", symbol="SK6805-EC15.kicad_sym", model="LED-SMD_4P-L1.5-W1.5-BL.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2890035", manufacturer="OPSCO Optoelectronics", partno="SK6805-EC15">
+    trait has_designator_prefix<prefix="LED">
+
+    # pins
+    signal DIN ~ pin 1
+    signal DOUT ~ pin 3
+    signal GND ~ pin 4
+    signal VDD ~ pin 2
+
+module OPSCO_Optoelectronics_SK6805_EC15_driver from BridgableLogic:
+    package = new OPSCO_Optoelectronics_SK6805_EC15_package
+    
+    power = new ElectricPower
+    power.gnd ~ package.GND
+    power.vcc ~ package.VDD
+    
+    data_in.line ~ package.DIN
+    data_out.line ~ package.DOUT
+    
+    data_in.reference ~ power
+    data_out.reference ~ power

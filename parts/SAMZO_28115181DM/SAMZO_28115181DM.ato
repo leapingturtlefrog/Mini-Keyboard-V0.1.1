@@ -1,0 +1,34 @@
+#pragma experiment("TRAITS")
+#pragma experiment("BRIDGE_CONNECT")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+import ElectricLogic
+import Resistor
+
+component SAMZO_28115181DM_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C47121944", date="2025-06-18T18:03:05.021769+00:00", checksum="8873d7058bf7efccb3d9e3b82c8c11ec27ca8c79eb86b822b4384c6997e78cb7">
+
+    trait is_atomic_part<manufacturer="SAMZO", partnumber="28115181DM", footprint="KEY-TH_28115181DM.kicad_mod", symbol="28115181DM.kicad_sym">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C47121944", manufacturer="SAMZO", partno="28115181DM">
+    trait has_designator_prefix<prefix="KEY">
+
+    # pins
+    pin 1
+    pin 2
+
+module SAMZO_28115181DM_driver:
+    package = new SAMZO_28115181DM_package
+    
+    resistor = new Resistor
+    resistor.resistance = 10kohms +/- 20%
+    resistor.package = "R0402"
+    
+    electric_out = new ElectricLogic
+    
+    electric_out.reference.vcc ~> resistor ~> electric_out.line
+    package.1 ~ electric_out.line
+    package.2 ~ electric_out.reference.gnd

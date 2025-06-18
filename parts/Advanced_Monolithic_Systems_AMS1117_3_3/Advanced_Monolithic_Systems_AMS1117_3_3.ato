@@ -1,0 +1,42 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+import Regulator
+import Capacitor
+
+component Advanced_Monolithic_Systems_AMS1117_3_3_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C6186", date="2025-06-18T19:02:36.357172+00:00", checksum="d60fd4e04a060fde4f16a1339489198f894c95ce9ea98903fbbd4e01005c81df">
+
+    trait is_atomic_part<manufacturer="Advanced Monolithic Systems", partnumber="AMS1117-3.3", footprint="SOT-223-3_L6.5-W3.4-P2.30-LS7.0-BR.kicad_mod", symbol="AMS1117-3.3.kicad_sym", model="SOT-223-4P_L6.5-W3.5-H1.6-LS7.0-P2.30.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C6186", manufacturer="Advanced Monolithic Systems", partno="AMS1117-3.3">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal GND ~ pin 1
+    signal VIN ~ pin 3
+    signal VOUT ~ pin 2
+    VOUT ~ pin 4
+
+module Advanced_Monolithic_Systems_AMS1117_3_3_driver from Regulator:
+    package = new Advanced_Monolithic_Systems_AMS1117_3_3_package
+    
+    power_in.vcc ~ package.VIN
+    power_in.gnd ~ package.GND
+    power_out.vcc ~ package.VOUT
+    power_out.gnd ~ package.GND
+    
+    input_cap = new Capacitor
+    output_cap = new Capacitor
+    
+    input_cap.power ~ power_in
+    output_cap.power ~ power_out
+    
+    input_cap.capacitance = 1uF +/- 20%
+    output_cap.capacitance = 1uF +/- 20%
+    
+    input_cap.package = "C0402"
+    output_cap.package = "C0402"

@@ -1,5 +1,2 @@
-# compute
-
-Computer stuff
-
-Created by Alex Aridgides <aaridgides3@gatech.edu>
+# Mini Keyboard V0.1.1
+Work
