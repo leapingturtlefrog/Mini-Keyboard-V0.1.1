@@ -1,4 +1,42 @@
-"""Brand new atopile project!"""
+#pragma experiment("FOR_LOOP")
+#pragma experiment("BRIDGE_CONNECT")
+
+from "parts/Espressif_Systems_ESP32_S3_WROOM_1_N16R2/Espressif_Systems_ESP32_S3_WROOM_1_N16R2.ato" import Espressif_Systems_ESP32_S3_WROOM_1_N16R2_driver
+from "parts/Shenzhen_Kinghelm_Elec_KH_TYPE_C_16P/Shenzhen_Kinghelm_Elec_KH_TYPE_C_16P.ato" import Shenzhen_Kinghelm_Elec_KH_TYPE_C_16P_driver
+from "parts/SAMZO_28115181DM/SAMZO_28115181DM.ato" import SAMZO_28115181DM_driver
+from "parts/Advanced_Monolithic_Systems_AMS1117_3_3/Advanced_Monolithic_Systems_AMS1117_3_3.ato" import Advanced_Monolithic_Systems_AMS1117_3_3_driver
+from "parts/OPSCO_Optoelectronics_SK6805_EC15/OPSCO_Optoelectronics_SK6805_EC15.ato" import OPSCO_Optoelectronics_SK6805_EC15_driver
+import ElectricPower
 
 module App:
-    pass
+    hid_controller = new HIDController
+
+
+module HIDController:
+    usb_connector = new Shenzhen_Kinghelm_Elec_KH_TYPE_C_16P_driver
+    micro = new Espressif_Systems_ESP32_S3_WROOM_1_N16R2_driver
+    
+    regulator = new Advanced_Monolithic_Systems_AMS1117_3_3_driver
+    
+    power_5V = new ElectricPower
+    power_3V3 = new ElectricPower
+    
+    usb_connector.power ~ power_5V
+    usb_connector.usb2 ~ micro.usb2
+    
+    power_5V ~> regulator ~> power_3V3
+    
+    switches = new SAMZO_28115181DM_driver[4]
+    
+    switches[0].electric_out ~ micro.gpios[0]
+    switches[1].electric_out ~ micro.gpios[1]
+    switches[2].electric_out ~ micro.gpios[2]
+    switches[3].electric_out ~ micro.gpios[3]
+    
+    leds = new OPSCO_Optoelectronics_SK6805_EC15_driver[4]
+    
+    for led in leds:
+        led.power ~ power_3V3
+    
+    micro.gpios[4] ~> leds[0] ~> leds[1] ~> leds[2] ~> leds[3]
+    
