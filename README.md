@@ -1,4 +1,3 @@
 # Mini Keyboard V0.1.1
-Work
-V0.1.1
-atopile
+Made using [atopile](atopile.io)
+<br>![Image of the PCB](/images/PCB.png)
